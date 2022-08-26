@@ -1,6 +1,123 @@
+@import "variables";
+
 body {
-  background: peru;
-  a {
-    color: blue;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+main{
+  display: flex;
+  width: 100%;
+}
+
+header{
+  background-color: white;
+  box-shadow: 0 .2em .3em rgb(216, 216, 216);
+  display: flex;
+  padding: 20px 40px 20px 20px;
+  font-family: fantasy;
+  font-size: 2em;
+  position: sticky;
+  top: 0;
+  &>div:first-child{
+    font-weight: bold;
+    cursor: pointer;
   }
+  &>div:last-child{
+    display: flex;
+    width: 100%;
+    padding-top: 10px;
+    margin-left: 20px;
+    font-size: 45px;
+    justify-content: space-between;
+    &>span{
+      cursor: pointer;
+    }
+  }
+}
+
+main{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  &>div:first-child, &>div:nth-child(2){
+    height: 100vh;
+  }
+  &>div:first-child{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    img{
+      width: 650px;
+      margin-bottom: 40px;
+    }
+    span{
+      display: flex;
+      width: 90%;
+      justify-content: space-between;
+      font-size: 1.8em;
+      font-weight: bold;
+      &>p:last-child{
+        cursor: pointer;
+      }
+    }
+  }
+  &>div:nth-child(2){
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0 230px;
+    font-size: 24px;
+    &>p::before{
+      content: "About";
+      font-weight: bold;
+      padding-right: 3em;
+      font-size: .7em;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+    &>p{
+      font-size: 1.2em;
+      line-height: 1.2em;
+    }
+    &>div{
+      width: 100%;
+      margin-top: 15px;
+      display: flex;
+      align-items: center;
+      cursor:pointer;
+      font-size: .8em;
+      font-weight: bold;
+      &>span:first-child{
+        background-color: black;
+        border-radius: 50%;
+        color: white;
+        padding: 3px 3px;
+        font-size: .6em;
+        font-weight: bold;
+        margin-right: 10px;
+      }
+      &:hover{
+        &>span:last-child{
+          animation: view .3s ease-in-out both;
+        }
+      }
+      @keyframes view{
+        from{
+        }
+        to{
+          transform: translateX(3px);
+        }
+      }
+    }
+  }
+}
+
+footer{
+  height: 305px;
+  background-color: #464646;
 }
