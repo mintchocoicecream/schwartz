@@ -14,9 +14,8 @@ main{
 
 header{
   background-color: white;
-  box-shadow: 0 .2em .3em rgb(216, 216, 216);
   display: flex;
-  padding: 20px 40px 20px 20px;
+  padding: 20px 40px 10px 20px;
   font-family: fantasy;
   font-size: 2em;
   position: sticky;
@@ -28,7 +27,6 @@ header{
   &>div:last-child{
     display: flex;
     width: 100%;
-    padding-top: 10px;
     margin-left: 20px;
     font-size: 45px;
     justify-content: space-between;
@@ -55,6 +53,11 @@ main{
       width: 650px;
       margin-bottom: 40px;
     }
+    @media screen and (max-width: 650px){
+      img{
+        width: 100%;
+      }
+    }
     span{
       display: flex;
       width: 90%;
@@ -71,17 +74,16 @@ main{
     flex-wrap: wrap;
     flex-direction: column;
     align-items: flex-start;
-    padding: 0 230px;
-    font-size: 24px;
+    padding: 0 15%;
     &>p::before{
       content: "About";
       font-weight: bold;
       padding-right: 3em;
-      font-size: .7em;
+      font-size: 1.5vw;
       font-family: Arial, Helvetica, sans-serif;
     }
     &>p{
-      font-size: 1.2em;
+      font-size: 2vw;
       line-height: 1.2em;
     }
     &>div{
@@ -90,7 +92,7 @@ main{
       display: flex;
       align-items: center;
       cursor:pointer;
-      font-size: .8em;
+      font-size: 1.2vw;
       font-weight: bold;
       &>span:first-child{
         background-color: black;
@@ -118,6 +120,35 @@ main{
 }
 
 footer{
-  height: 305px;
+  height: 250px;
   background-color: #464646;
+  color: white;
+  display: flex;
+  padding: 20px;
+  bottom: 0;
+  font-size: .9em;
+  .footer{
+    width: 100%;
+    display: grid;
+    justify-items: center;
+    grid-template-columns: repeat(3, 1fr);
+    &>div{
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    &>div:first-child{
+      h1{
+        font-family: fantasy;
+        font-size: 1.5em;
+        cursor: pointer;
+      }
+      &>div{
+        height: 100px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+      }
+    }
+  }
 }
